@@ -1,0 +1,243 @@
+
+:root {
+  --bg: #070707;
+  --bg-b: #1e171f;
+  --fg: #f4fefb;
+  --fg-b: #e5e3d3;
+  --txt: #f4fefb;
+  --acnt-a: #78423b;
+  --acnt-b: #aeb0af;
+  --acnt-c: #7035bb;
+  --acnt-cb: #f035bb;
+  --acnt-d: #090910;
+  --acnt-e: #474a4f;
+  --clr: #00000000;
+  --indicator-inactive: #474a4f;
+  --indicator-active: #ff0077;
+}
+
+@font-face {
+  src: url(./../fonts/Nunito/Nunito-Regular.ttf);
+  font-family: mono;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: unset;
+  border: unset;
+  outline: unset;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  font-family: mono;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background: var(--acnt-d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-field {
+  width: 0;
+  transition: .5s;
+  transition-timing-function: linear;
+  height: 95%;
+  background: var(--acnt-d);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  box-shadow: var(--acnt-c) 0 0 .4em .1em;
+  position: absolute;
+  display: none;
+}
+
+.content-field h2 {
+  text-align: start;
+  color: var(--txt);
+  padding: 1em;
+  width: 100%;
+  width: 80%;
+  background: var(--acnt-d);
+  border-radius: 1em 1em 0 0;
+  z-index: 1;
+  transition: 1s;
+  opacity: 0;
+}
+
+.assemble-query {
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 21;
+  overflow: scroll;
+  gap: 2em;
+  padding: 1.2em;
+  padding: 3em 6em 3em 6em;
+  border-radius: 1em;
+  border-top: 2px solid var(--acnt-cb);
+  border-left: 2px solid var(--acnt-cb);
+  border-right: 2px solid var(--acnt-cb);
+  background: var(--acnt-c);
+  transition: 1s;
+  opacity: 0;
+  scrollbar-color: var(--acnt-cb) var(--clr);
+}
+
+.assem-items {
+  background: var(--bg-b);
+  color: var(--fg);
+  box-shadow: var(--acnt-c) 0 0 .2em .1em;
+  border-radius: .6em;
+  width: 100%;
+  min-height: 5em;
+  box-shadow: inset var(--acnt-c) -.2em -.2em .5em, #222222 0 0 .4em .1em;
+}
+
+.tooltip-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.query-item {
+  width: 100%;
+  text-align: center;
+  letter-spacing: .2em;
+}
+
+.staging-field {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1em;
+  width: 80%;
+  left: 50%;
+  padding: 1em;
+  transition: 1s;
+  opacity: 0;
+}
+
+.staging-button {
+  text-align: center;
+  background: var(--acnt-c);
+  color: var(--txt);
+  width: 15%;
+  height: 4em;
+  border-radius: .5em;
+  transition: .2s;
+  box-shadow: var(--clr) 0 0 .2em .2em;
+  font-weight: 600;
+  letter-spacing: .1em;
+}
+
+.staging-button:hover {
+  background: var(--acnt-c);
+  box-shadow: var(--acnt-cb) 0 0 .2em .2em;
+  cursor: none;
+}
+
+.staging-button:active {
+  transform: translateY(5px);
+  background: var(--acnt-cb);
+}
+
+.search-field {
+  background: linear-gradient(-35deg, var(--acnt-c), var(--acnt-d));
+  width: 30em;
+  height: 30em;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  box-shadow: var(--acnt-c) 0 0 .2em .1em;
+}
+
+.search-field-button {
+  border-radius: 50%;
+  background: var(--acnt-c);
+  color: var(--txt);
+  font-weight: 600;
+  letter-spacing: .1em;
+  width: 25%;
+  height: 4em;
+  border-radius: 2em;
+  transition: .2s;
+  cursor: none;
+  box-shadow: var(--clr) 0 0 .2em .2em, inset -.1em -.1em .2em var(--acnt-d);
+}
+
+.search-field-button:hover {
+  background: var(--acnt-c);
+  box-shadow: var(--acnt-cb) 0 0 .2em .2em, inset -.1em -.1em .2em var(--acnt-cb);
+}
+
+.search-field-button:active {
+  transform: translateY(5px);
+  background: var(--acnt-cb);
+  cursor: none;
+}
+
+.search-field-indicator {
+  background: var(--indicator-inactive);
+  width: 5%;
+  height: 1em;
+  border-radius: .5em;
+  box-shadow: inset -.1em -.1em .2em var(--acnt-d);
+}
+
+.search-string {
+  display: none;
+}
+
+.query-date-item {
+  padding: 0 25%;
+}
+
+@media (max-width: 1080px) {
+  .content-field {
+    width: 100%;
+    height: 100%;
+    border-radius: unset;
+  }
+
+  .content-field h2 {
+    width: 98%;
+  }
+
+  .assemble-query {
+    width: 98%;
+    padding: 1em;
+    gap: .9em;
+  }
+
+  .staging-field {
+    width: 98%;
+  }
+
+  .staging-button {
+    width: 50%;
+  }
+
+  .search-field {
+    width: 20em;
+    height: 20em;
+  }
+
+  .search-field-indicator {
+    width: 5%;
+  }
+}
+
