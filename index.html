@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width initial-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" href="./assets/css/index.css"/>
+    <title>Qrus</title>
+  </head>
+  <body>
+    <div id="shader" class="shader"></div>
+    <div id="panel-field" class="panel-field">
+      <div id="active-operators" class="panel-field-item active-operators"></div>
+      <div id="settings" class="panel-field-item settings">
+	<input id="select-all-modules" class="settings-input" type="button" value="Select All Modules"/>
+	<input id="deselect-all-modules" class="settings-input" type="button" value="Deselect All Modules"/>
+      </div>
+    </div>
+    <div id="panel-toggle" class="panel-toggle">
+      <div id="toggle-div-a" class="toggle-div toggle-div-a"></div>
+      <div id="toggle-div-b" class="toggle-div toggle-div-b"></div>
+      <div id="toggle-div-c" class="toggle-div toggle-div-c"></div>
+    </div>
+    <div id="content-field" class="content-field">
+      <h2 id="content-field-title">Qrus</h2>
+      <div id="assemble-query" class="assemble-query">
+      </div>
+      <div id="staging-field" class="staging-field">
+	<input id="clear" class="staging-button" type="button" value="C"/>
+	<input id="submit" class="staging-button" type="button" value="Submit"/>
+      </div>
+    </div>
+    <div id="search-field" class="search-field">
+      <input id="select" class="search-field-button" type="button" value="Select"/>
+      <input id="search" class="search-field-button" type="button" value="Search"/>
+      <div id="search-field-indicator" class="search-field-indicator">
+      </div>
+      <a id="search-string" class="search-string" href="https://www.searchitem.com" target="blank_page"></a>
+    </div>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
+
